@@ -1,0 +1,76 @@
+.container-grey {
+  background-color: #333333; /* Dark grey color */
+}
+/* Social Media Icons */
+.social-icons {
+  display: flex;
+  align-items: center;
+}
+
+.social-icons a {
+  margin-right: 10px;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+}
+.container-fluid {
+  background-color: #333333; /* Dark grey color */
+  padding-left: 30px;
+}
+
+.eco_footer_columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col-md-3 {
+  flex: 0 0 30%;
+  max-width: 30%;
+}
+
+.widget {
+  color: #ffffff; /* White text color */
+}
+
+.widget-title {
+  color: #ffffff; /* White text color */
+}
+
+.textwidget p {
+  color: #ffffff; /* White text color */
+}
+
+.textwidget a {
+  color: #ffffff; /* White text color */
+}
+
+.widget-social ul li a {
+  color: #ffffff; /* White text color */
+}
+
+.widget-social ul li a:hover {
+  color: #cccccc; /* Light grey color on hover */
+}
+
+.footer_itm ul li {
+  color: #ffffff; /* White text color */
+}
+
+.footer_itm ul li a {
+  color: #ffffff; /* White text color */
+}
+
+.footer_itm ul li a:hover {
+  color: #cccccc; /* Light grey color on hover */
+}
+footer {
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  padding: 10px 0;
+
+  bottom: 0;
+  width: 100%;
+}

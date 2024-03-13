@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          
+          <link
+            href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&family=Oswald:wght@600&display=swap"
+            rel="stylesheet"
+          />
+          <link rel="stylesheet" href="static/tailwind.css" />
+          <link rel="icon" href="static/logo.png" />
+          <title>Eco Defenders</title>
+
+          <style>
+            html{
+              background-color: transparent;
+            }
+            #Home {
+              background-image: url('static/bg.webp');
+              background-size: cover;
+              background-position: center;
+            }
+            body {
+              font-family: Arial, sans-serif;
+              margin: 0;
+              padding: 0;
+              background-color: #09080800;
+              background-image: url('static/logo.png');
+              
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-position: center;
+            }
+
+            header {
+              background-color: #01d8f400;
+              color: #000;
+              padding: 2px;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+            }
+
+            header img {
+              width: 200px; /* Reduced the size of the logo */
+              height: auto;
+            }
+
+            nav {
+              display: flex;
+              justify-content: flex-end; /* Align to the right */
+              margin-top: 20px;
+            }
+
+            nav a {
+              color: #000;
+              text-decoration: none;
+              margin: 0 20px;
+              font-size: 18px;
+              font-weight: bold;
+            }
+
+            .container {
+              padding: 300px;
+              background-color: #fdfdfd00;
+              
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+              margin: 0 auto;
+              max-width: 4000px;
+            }
+
+            h1 {
+              margin-top: 0;
+            }
+
+            p {
+              line-height: 1.6;
+              margin-bottom: 20px;
+            }
+
+            img {
+              max-width: 100%;
+              height: auto;
+              display: block;
+
+              border-radius: 5px;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            img.my-6 {
+              display: block;
+              margin: auto;
+            }
+            
+            .text-container {
+              position: absolute;
+              left: 50px;
+              top: 50%;
+              transform: translateY(-70%);
+
+            }
+              
+            
+            
+            footer {
+              background-color: #fff;
+              color: #000;
+              text-align: center;
+              padding: 10px 0;
+              position: fixed;
+              bottom: 0;
+              width: 100%;
+            }
+
+            /* Keyframe animation for moving text */
+            @keyframes moveText {
+              0% {
+                opacity: 0;
+                transform: translateY(0);
+              }
+              30% {
+                opacity: 1;
+                transform: translateY(-5px);
+              }
+              70% {
+                opacity: 1;
+                transform: translateY(0);
+              }
+              100% {
+                opacity: 0;
+                transform: translateY(0);
+              }
+            }
+
+            /* Apply animation to the moving-text class with increased duration and subtle color change */
+            .moving-text {
+              animation: moveText 10s ease-in-out infinite;
+              color: #32a03c;
+              font-weight: bold;
+              font-size: 24px;
+            }
+
+            .green-solution {
+              color: green;
+            }
+
+            .login-register-buttons {
+              display: flex;
+              align-items: center;
+            }
+
+            .login-register-buttons a {
+              color: #000;
+              text-decoration: none;
+              margin: 0 20px;
+              font-size: 18px;
+              font-weight: bold;
+            }
+
+            /* Social Media Icons */
+            .social-icons {
+              display: flex;
+              align-items: center;
+            }
+
+            .social-icons a {
+              margin-right: 10px;
+            }
+
+            .social-icons img {
+              width: 30px;
+              height: 30px;
+            }
+            .container-fluid {
+              background-color: #333333; /* Dark grey color */
+              padding-left: 30px;
+            }
+            
+            .eco_footer_columns {
+              display: flex;
+              justify-content: space-between;
+            }
+        
+            .col-md-3 {
+              flex: 0 0 30%;
+              max-width: 30%;
+            }
+            
+            .widget {
+              color: #ffffff; /* White text color */
+            }
+            
+            .widget-title {
+              color: #ffffff; /* White text color */
+            }
+            
+            .textwidget p {
+              color: #ffffff; /* White text color */
+            }
+            
+            .textwidget a {
+              color: #ffffff; /* White text color */
+            }
+            
+            .widget-social ul li a {
+              color: #ffffff; /* White text color */
+            }
+            
+            .widget-social ul li a:hover {
+              color: #cccccc; /* Light grey color on hover */
+            }
+            
+            .footer_itm ul li {
+              color: #ffffff; /* White text color */
+            }
+            
+            .footer_itm ul li a {
+              color: #ffffff; /* White text color */
+            }
+            
+            .footer_itm ul li a:hover {
+              color: #cccccc; /* Light grey color on hover */
+            }
+            .slideshow-container {
+              max-width: 1000px;
+              position: relative;
+              margin: auto;
+            }
+        
+            .mySlides {
+              display: none;
+            }
+        
+            .prev,
+            .next {
+              cursor: pointer;
+              position: absolute;
+              top: 50%;
+              width: auto;
+              padding: 16px;
+              margin-top: -22px;
+              color: white;
+              font-weight: bold;
+              font-size: 18px;
+              transition: 0.6s ease;
+              border-radius: 0 3px 3px 0;
+              user-select: none;
+            }
+        
+            .next {
+              right: 0;
+              border-radius: 3px 0 0 3px;
+            }
+        
+            .prev:hover,
+            .next:hover {
+              background-color: rgba(0, 0, 0, 0.8);
+            }
+        
+            .fade {
+              animation-name: fade;
+              animation-duration: 1.5s;
+            }
+        
+            @keyframes fade {
+              from {
+                opacity: 0.4;
+              }
+        
+              to {
+                opacity: 1;
+              }
+            }
+
+          
+              #custom_html-8 {
+                width: 25%;
+            }
+              .saahas_footer .col-md-3 {
+                float: left;
+                width: 20%;
+            }
+              #custom_html-5 {
+                width: 15%;
+            }
+              #custom_html-6 li, #custom_html-6 .right {
+                list-style: none;
+                color: #6f6f6f;
+                font-size: 13px;
+                line-height: 1.5;
+                position: relative;
+                font-size: 15px;
+                padding-left: 3%;
+                padding-left: 9%;
+                float: left;
+            }
+              
+            #custom_html-6 .right li:before {
+                position: absolute;
+                content: "";
+                left: 4px;
+                top: 9px;
+                width: 4px;
+                height: 4px;
+                background-color: #8f918e;
+                border-radius: 100%;
+            }
+            #custom_html-6 .right li:after {	
+                  position: absolute;
+                content: "";
+                left: 0px;
+                top: 5px;
+                width: 12px;
+                height: 12px;
+                border: 1px solid #8f918e;
+                border-radius: 100%;
+              }
+              
+            
+            
+            
+          </style>
+        </head>
+        <body>
+          <div id="l1-auth-links">
+            <!-- Added -->
+            <nav aria-label="Contact/Login Navigation" role="navigation">
+              <!-- Added -->
+              <span id="l1-contact-separator">&nbsp;|&nbsp;</span>
+              <!-- Added -->
+              <span id="l1-contact-separator-br"><br /></span>
+              <!-- Added -->
+              <a href="login.html">Login</a>
+              &nbsp;|&nbsp;
+              <!-- Added -->
+              <a href="register.html">Register</a>
+              <!-- Added -->
+            </nav>
+            <!-- Added -->
+          </div>
+          <!-- Added -->
+
+          <header>
+            
+            <nav>
+              <a href="#Home">Home</a>
+              <a href="service.html">Services</a>
+              <a href="about.html">About</a>
+              <a href="#contact">Contact</a>
+            </nav>
+            <!-- Added social media icons -->
+            <div class="social-icons">
+              <a href="https://www.facebook.com/eco.defenders.2024?sfnsn=wiwspwa&mibextid=RUbZ1f"
+                ><img src="static/fb.png" alt="Facebook"
+              /></a>
+              <a href="https://www.instagram.com/eco_defenders11/"
+                ><img src="static/inst.png" alt="Instagram"
+              /></a>
+              <a href="mailto:ecodefenders11@gmail.com"
+                ><img src="static/email.png" alt="Email"
+              /></a>
+            </div>
+            <!-- End of social media icons -->
+          </header>
+          <div
+            id="Home"
+            class="parallax-window container"
+            data-parallax="scroll"
+          >
+            
+          <div class="text-container">
+            <h1 class="text-4xl font-medium mb-6 tm-text-green">
+            <span style="font-weight: bold;color: white;">Welcome to Eco Defenders</span>
+            </h1>
+            <p>
+              
+              <span class="moving-text">
+                <span style="font-weight: bold; font-size: 24px"
+                  >Transforming Waste into</span
+                >
+                <span class="green-solution">Green Solutions</span>
+              </span>
+            </p>
+          </div>
+          
+             
+            </div>
+          </div>
+          <br>
+          <div id="about" class="parallax-window relative" data-parallax="scroll" data-image-src="static/\vecteezy_modern-background-with-green-color-suitable-for-earth-day_21306226.jpg">
+            <div class="bg-white bg-opacity-80 p-12 pb-14 rounded-xl mb-5">
+             
+              
+                  <center>
+                    <h2 class="mb-6 tm-text-green text-4xl font-medium">Who Are We?</h2>
+                  
+                  <p class="mb-6 tm-text-green text-xl font-medium">We are Eco Defenders, a waste pickup service.Our platform allows users to share their experiences and insights through various media formats, including photos, videos, and blogs. Additionally, we recognize and appreciate the efforts of our volunteers by providing them with certificates, fostering a sense of pride and accomplishment in their contributions towards environmental sustainability.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          </center>
+          
+          
+          <div
+            id="about"
+            class="parallax-window relative"
+            data-parallax="scroll"
+            data-image-src="static/\vecteezy_modern-background-with-green-color-suitable-for-earth-day_21306226.jpg"
+          >
+            <div class="bg-white bg-opacity-80 p-12 pb-14 rounded-xl mb-5"><center>
+              <h1 class="mb-6 tm-text-green text-4xl font-medium">Our Survey</h1></center>
+              
+              <div class="slideshow-container">
+                <div class="mySlides fade">
+                  <iframe width="100%" height="500px" src="https://www.youtube.com/embed/su-zQmt3W6s?mute=1&autoplay=0"
+                    title="5 years in operation - SZW&#39;s MRF" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                </div>
+            
+                <div class="mySlides fade">
+                  <img src="static/77.jpeg" style="width:100%">
+                </div>
+            
+                <div class="mySlides fade">
+                  <img src="static/88.jpeg" style="width:100%">
+                </div>
+            
+                <div class="mySlides fade">
+                  <img src="static/99.png" style="width:100%">
+                </div>
+                <div class="mySlides fade">
+                  <img src="static/66.jpeg" style="width:100%">
+                </div>
+            
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+              </div>
+              
+              
+            </div>
+          </div>
+        
+          
+          
+          
+          <div
+            id="contact"
+            class="parallax-window relative"
+            data-parallax="scroll"
+            data-image-src="static/\240_F_692610125_kXouGZ9sUfGMwOH2x0GCox2T5YzeBt9c.jpg"
+          >
+            <div
+              class="flex flex-col lg:flex-row justify-around items-center lg:items-stretch"
+            >
+              <div
+                class="flex-1 rounded-xl px-10 py-12 m-5 bg-white bg-opacity-80 tm-item-container"
+              >
+                <h2 class="text-3xl mb-6 tm-text-green">Contact Us</h2>
+                <p class="mb-6 text-lg leading-8">
+                  Have questions or want to get involved? Reach out to us!
+                </p>
+                <p class="mb-10 text-lg">
+                  <span class="block mb-2"
+                    >PH:
+                    <a
+                      href="tel:9596534194"
+                      class="hover:text-yellow-600 transition"
+                      >9596534194</a
+                    >
+                  </span>
+                  <span class="block"
+                    >Email:
+                    <a
+                      href="mailto:ecodefenders11@gmail.com"
+                      class="hover:text-yellow-600 transition"
+                      >ecodefenders11@gmail.com</a
+                    >
+                  </span>
+                </p>
+                <div class="text-center"></div>
+              </div>
+              <div
+                class="flex-1 rounded-xl p-12 pb-14 m-5 bg-black bg-opacity-50 tm-item-container"
+              >
+                <form action="submit_form.php" method="POST" class="text-lg">
+                  <input
+                    type="text"
+                    name="name"
+                    class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold"
+                    placeholder="Name"
+                    required=""
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold"
+                    placeholder="Email"
+                    required=""
+                  />
+                  <textarea
+                    rows="6"
+                    name="message"
+                    class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold"
+                    placeholder="Message..."
+                    required=""
+                  ></textarea>
+                  <div class="text-right">
+                    <button
+                      type="submit"
+                      class="text-white hover:text-yellow-500 transition"
+                    >
+                      Send it
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid" style="padding-left: 0px">
+            <!-- Eco footer content -->
+            <div class="eco_footer_columns">
+              <div id="text-3" class="col-md-3 col-sm-6 responsive-devider-50 widget_text"style="padding-left: 20px">
+                <div class="widget kode-widget list-style-1">
+                  <br>
+                  <h5 class="widget-title eco_sm_titles">Eco-Defenders Waste Management </h5>
+                  <br>
+                  <div class="clear"></div>
+                  <div class="textwidget">
+                    <p>Eco-Defenders Waste Management is committed to cleaning India by tackling domestic waste. We are dedicated to clearing the clutter and raising awareness about the importance of proper waste disposal. Our mission is to create a cleaner, greener India, one household at a time.</p>
+                   
+                  </div>
+                </div>
+              </div>
+          
+              <div id="custom_html-5" class="col-md-3 col-sm-6 responsive-devider-50 widget_custom_html" style="padding-left: 200px">
+                <div class="widget_text widget kode-widget list-style-1">
+                  <div class="textwidget custom-html-widget">
+                    <div class="footer_itm widget_nav_menu">
+                      <br>
+                      <h5 class="widget-title eco_sm_titles">Our Company</h5>
+                      <div class="clear"></div>
+                      <div class="menu-footer-menu-container">
+                        <br>
+                        <ul class="menu">
+                          <li><a href="http://localhost:5500/" aria-current="page">Home</a></li>
+                          <li><a href="http://localhost:5500/about.html#about">About Us</a></li>
+                          
+                          <li><a href="http://localhost:5500/#contact">Contact Us</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          
+              <div id="custom_html-7" class="col-md-3 col-sm-6 responsive-devider-50 widget_custom_html"style="padding-left: 200px">
+                <div class="widget_text widget kode-widget list-style-1">
+                  <div class="textwidget custom-html-widget">
+                    <div class="footer_itm">
+                      <div class="widget-social">
+                        <br>
+                        <h5 class="widget-title eco_sm_titles">Follow us on</h5>
+                        <div class="clear"></div>
+                        <br>
+                        <div class="social-icons">
+                          <a href="https://www.facebook.com/eco.defenders.2024?sfnsn=wiwspwa&mibextid=RUbZ1f"
+                            ><img src="static/fbwhite.png" alt="Facebook"
+                          /></a>
+                          <a href="https://www.instagram.com/eco_defenders11/"
+                            ><img src="static/whiteinsta.png" alt="Instagram"
+                          /></a>
+                          <a href="https://www.youtube.com/@ECODefenders"
+                            ><img src="static/yt.png" alt="youtube"
+                          /></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+        
+            function plusSlides(n) {
+              showSlides((slideIndex += n));
+            }
+        
+            function currentSlide(n) {
+              showSlides((slideIndex = n));
+            }
+        
+            function showSlides(n) {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+              if (n > slides.length) {
+                slideIndex = 1;
+              }
+              if (n < 1) {
+                slideIndex = slides.length;
+              }
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+              }
+              slides[slideIndex - 1].style.display = "block";
+            }
+
+            
+          </script>
+          
+          <footer>&copy; 2024 Eco Defenders - All rights reserved</footer>
+        </body>
+      </html>
+  </head>
+</html>

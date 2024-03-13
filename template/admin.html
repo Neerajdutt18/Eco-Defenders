@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 2rem;
+        background-color: #f0fffc;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+      }
+      #Home {
+        background-image: url("static/bg.webp");
+        background-size: cover;
+        background-position: center;
+      }
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .pickup-container {
+        border: 1px solid #dddddd;
+        padding: 10px;
+        margin-bottom: 10px; /* Reduced margin-bottom */
+        background-color: #ffffff;
+        border-radius: 10px;
+        width: 48%;
+        max-width: 500px;
+      }
+
+      .pickup-label {
+        font-weight: bold;
+        display: block;
+      }
+
+      .pickup-info {
+        margin-bottom: 10px;
+        display: flex;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        width: 100%;
+      }
+
+      html {
+        background-color: transparent;
+      }
+      #Home {
+        background-size: cover;
+        background-position: center;
+      }
+
+      header {
+        background-color: #01d8f400;
+        color: #000;
+        padding: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      header img {
+        width: 200px; /* Reduced the size of the logo */
+        height: auto;
+      }
+
+      nav {
+        display: flex;
+        justify-content: flex-end; /* Align to the right */
+        margin-top: 20px;
+      }
+
+      nav a {
+        color: #000;
+        text-decoration: none;
+        margin: 0 20px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      h1 {
+        margin-top: 0;
+      }
+
+      p {
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      img.my-6 {
+        display: block;
+        margin: auto;
+      }
+
+      footer {
+        background-color: #fff;
+        color: #000;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+
+      /* Keyframe animation for moving text */
+      @keyframes moveText {
+        0% {
+          opacity: 0;
+          transform: translateY(0);
+        }
+        30% {
+          opacity: 1;
+          transform: translateY(-5px);
+        }
+        70% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(0);
+        }
+      }
+
+      /* Apply animation to the moving-text class with increased duration and subtle color change */
+      .moving-text {
+        animation: moveText 10s ease-in-out infinite;
+        color: #32a03c;
+        font-weight: bold;
+        font-size: 24px;
+      }
+
+      .green-solution {
+        color: green;
+      }
+
+      .login-register-buttons {
+        display: flex;
+        align-items: center;
+      }
+
+      .login-register-buttons a {
+        color: #000;
+        text-decoration: none;
+        margin: 0 20px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      /* Social Media Icons */
+      .social-icons {
+        display: flex;
+        align-items: center;
+      }
+
+      .social-icons a {
+        margin-right: 10px;
+      }
+
+      .social-icons img {
+        width: 30px;
+        height: 30px;
+      }
+      .container-fluid {
+        background-color: #333333; /* Dark grey color */
+        padding-left: 30px;
+      }
+
+      .eco_footer_columns {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .col-md-3 {
+        flex: 0 0 30%;
+        max-width: 30%;
+      }
+
+      .widget {
+        color: #ffffff; /* White text color */
+      }
+
+      .widget-title {
+        color: #ffffff; /* White text color */
+      }
+
+      .textwidget p {
+        color: #ffffff; /* White text color */
+      }
+
+      .textwidget a {
+        color: #ffffff; /* White text color */
+      }
+
+      .widget-social ul li a {
+        color: #ffffff; /* White text color */
+      }
+
+      .widget-social ul li a:hover {
+        color: #cccccc; /* Light grey color on hover */
+      }
+
+      .footer_itm ul li {
+        color: #ffffff; /* White text color */
+      }
+
+      .footer_itm ul li a {
+        color: #ffffff; /* White text color */
+      }
+
+      .footer_itm ul li a:hover {
+        color: #cccccc; /* Light grey color on hover */
+      }
+      .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+      }
+
+      .mySlides {
+        display: none;
+      }
+
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+      }
+
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+
+      .prev:hover,
+      .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      #custom_html-8 {
+        width: 25%;
+      }
+      .saahas_footer .col-md-3 {
+        float: left;
+        width: 20%;
+      }
+      #custom_html-5 {
+        width: 15%;
+      }
+      #custom_html-6 li,
+      #custom_html-6 .right {
+        list-style: none;
+        color: #6f6f6f;
+        font-size: 13px;
+        line-height: 1.5;
+        position: relative;
+        font-size: 15px;
+        padding-left: 3%;
+        padding-left: 9%;
+        float: left;
+      }
+
+      #custom_html-6 .right li:before {
+        position: absolute;
+        content: "";
+        left: 4px;
+        top: 9px;
+        width: 4px;
+        height: 4px;
+        background-color: #8f918e;
+        border-radius: 100%;
+      }
+      #custom_html-6 .right li:after {
+        position: absolute;
+        content: "";
+        left: 0px;
+        top: 5px;
+        width: 12px;
+        height: 12px;
+        border: 1px solid #8f918e;
+        border-radius: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="l1-auth-links">
+      <!-- Added -->
+      <nav aria-label="Contact/Login Navigation" role="navigation">
+        <!-- Added -->
+        <span id="l1-contact-separator">&nbsp;|&nbsp;</span>
+        <!-- Added -->
+        <span id="l1-contact-separator-br"><br /></span>
+        <!-- Added -->
+        <a href="login.html">Login</a>
+        &nbsp;|&nbsp;
+        <!-- Added -->
+        <a href="register.html">Register</a>
+        <!-- Added -->
+      </nav>
+      <!-- Added -->
+    </div>
+    <!-- Added -->
+
+    <header>
+      <nav>
+        <a href="#Home">Home</a>
+        <a href="service.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <!-- Added social media icons -->
+      <div class="social-icons">
+        <a
+          href="https://www.facebook.com/eco.defenders.2024?sfnsn=wiwspwa&mibextid=RUbZ1f"
+          ><img src="static/fb.png" alt="Facebook"
+        /></a>
+        <a href="https://www.instagram.com/eco_defenders11/"
+          ><img src="static/inst.png" alt="Instagram"
+        /></a>
+        <a href="mailto:ecodefenders11@gmail.com"
+          ><img src="static/email.png" alt="Email"
+        /></a>
+      </div>
+      <!-- End of social media icons -->
+    </header>
+    <div class="container">
+      <h1>Pickup Data</h1>
+      {% for pickup in takepickups %}
+      <div class="pickup-container">
+        <div class="pickup-info">
+          <span class="pickup-label">Name: </span>{{ pickup.name }}
+        </div>
+        <div class="pickup-info">
+          <span class="pickup-label">Email: </span>{{ pickup.email }}
+        </div>
+        <div class="pickup-info">
+          <span class="pickup-label">Phone: </span>{{ pickup.phone }}
+        </div>
+        <div class="pickup-info">
+          <span class="pickup-label">Waste Type: </span>{{ pickup.waste_type }}
+        </div>
+        <div class="pickup-info">
+          <span class="pickup-label">Quantity: </span>{{ pickup.quantity }}
+        </div>
+        <div class="pickup-info">
+          <span class="pickup-label">Date Pickup: </span>{{ pickup.date_pickup
+          }}
+        </div>
+        <div class="pickup-info">
+          <span class="pickup-label">Time Pickup: </span>{{ pickup.time_pickup
+          }}
+        </div>
+        <div class="pickup-info">
+          <span class="pickup-label">Address Pickup: </span>
+          {{ pickup.address_pickup }}
+        </div>
+        <!-- Add more pickup fields as needed -->
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>

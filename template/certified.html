@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="static/logo.png" />
+    <link rel="stylesheet" href="static/main.css">
+    <title>Get Certified - Waste Management</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9ece3;
+        color: #333;
+        background-image: url('static/logo.png'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+        background-size: cover; /* This ensures that the background image covers the entire body */
+        background-position: center; /* This centers the background image */
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      .py-24 {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .mb-16 {
+        margin-bottom: 2rem;
+      }
+
+      .bg-white {
+        background-color: #ffffff;
+      }
+
+      .tm-text-brown {
+        color: #8b4513;
+      }
+
+      .py-6 {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+      }
+
+      .px-12 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .text-4xl {
+        font-size: 2rem;
+      }
+
+      .font-medium {
+        font-weight: 500;
+      }
+
+      .inline-block {
+        display: inline-block;
+      }
+
+      .rounded-md {
+        border-radius: 0.375rem;
+      }
+
+      header {
+        background-color: #2c3e50;
+        padding: 20px;
+        text-align: center;
+        color: #ecf0f1;
+      }
+
+      footer {
+        background-color: #2c3e50;
+        padding: 20px;
+        text-align: center;
+        color: #ecf0f1;
+      }
+
+      .certificate-form {
+        margin-top: 20px;
+      }
+
+      .certificate-form label,
+      .certificate-form input {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .certificate-form input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+      }
+
+      .certificate-form button {
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        position: relative;
+      }
+
+      .certificate-form button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("static/certificate.png");
+        background-size: cover;
+        z-index: -1;
+        opacity: 0.5;
+        border-radius: 5px;
+      }
+
+      .certificate-form button:hover {
+        background-color: #2980b9;
+      }
+
+      /* Popup Styles */
+      .popup-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        justify-content: center;
+        align-items: center;
+      }
+
+      .popup-image {
+        max-width: 80%;
+        max-height: 80%;
+        border-radius: 5px;
+      }
+
+      .close-popup {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        color: #fff;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1 class="tm-text-white">Get Certified</h1>
+    </header>
+
+    <div class="container">
+      <div class="certificate-form">
+        <form id="certificateForm" action="/submit-certificate" method="POST">
+          <label for="FullName">Full Name:</label>
+          <input type="text" id="FullName" name="FullName" required />
+
+          <label for="mobileNumber">Mobile Number:</label>
+          <input type="text" id="mobileNumber" name="mobileNumber" required />
+
+          <label for="address">Address:</label>
+          <input type="text" id="address" name="address" required />
+
+          <center>
+            <button type="submit">Submit</button>
+              
+          </center>
+        </form>
+      </div>
+    </div>
+    <div class="popup-container" id="popupContainer" onclick="closePopup()">
+      <span class="close-popup" onclick="closePopup()">&times;</span>
+      <img
+        src="static/certificate.png"
+        alt="Certificate Image"
+        class="popup-image"
+      />
+    </div>
+</form>
+<div class="container-grey">
+  <div class="eco_footer_columns">
+    <div id="text-3" class="col-md-3 col-sm-6 responsive-devider-50 widget_text"style="padding-left: 20px">
+      <div class="widget kode-widget list-style-1">
+        <br>
+        <h5 class="widget-title eco_sm_titles">Eco-Defenders Waste Management </h5>
+        <br>
+        <div class="clear"></div>
+        <div class="textwidget">
+          <p>Eco-Defenders Waste Management is committed to cleaning India by tackling domestic waste. We are dedicated to clearing the clutter and raising awareness about the importance of proper waste disposal. Our mission is to create a cleaner, greener India, one household at a time.</p>
+         
+        </div>
+      </div>
+    </div>
+
+    <div id="custom_html-5" class="col-md-3 col-sm-6 responsive-devider-50 widget_custom_html" style="padding-left: 200px">
+      <div class="widget_text widget kode-widget list-style-1">
+        <div class="textwidget custom-html-widget">
+          <div class="footer_itm widget_nav_menu">
+            <br>
+            <h5 class="widget-title eco_sm_titles">Our Company</h5>
+            <div class="clear"></div>
+            <div class="menu-footer-menu-container">
+              <br>
+              <ul class="menu">
+                <li><a href="http://localhost:5500/" aria-current="page">Home</a></li>
+                <li><a href="http://localhost:5500/about.html#about">About Us</a></li>
+                
+                <li><a href="http://localhost:5500/#contact">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="custom_html-7" class="col-md-3 col-sm-6 responsive-devider-50 widget_custom_html"style="padding-left: 200px">
+      <div class="widget_text widget kode-widget list-style-1">
+        <div class="textwidget custom-html-widget">
+          <div class="footer_itm">
+            <div class="widget-social">
+              <br>
+              <h5 class="widget-title eco_sm_titles">Follow us on</h5>
+              <div class="clear"></div>
+              <br>
+              <div class="social-icons">
+                <a href="https://www.facebook.com/eco.defenders.2024?sfnsn=wiwspwa&mibextid=RUbZ1f"
+                  ><img src="static/fbwhite.png" alt="Facebook"
+                /></a>
+                <a href="https://www.instagram.com/eco_defenders11/"
+                  ><img src="static/whiteinsta.png" alt="Instagram"
+                /></a>
+                <a href="https://www.youtube.com/@ECODefenders"
+                  ><img src="static/yt.png" alt="youtube"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+</div>
+<footer>
+  <p>&copy; 2024 Eco-Defenders. All rights reserved.</p>
+</footer>
+    
+
+    <script>
+      function openPopup() {
+        document.getElementById("popupContainer").style.display = "flex";
+      }
+
+      function closePopup() {
+        document.getElementById("popupContainer").style.display = "none";
+      }
+
+      
+       
+    </script>
+  </body>
+</html>

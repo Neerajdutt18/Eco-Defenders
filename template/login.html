@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="static/logo.png" />
+    <title>Login</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-image: url("static/logo.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .form-box {
+        width: 300px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-box h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .form-box input[type="text"],
+      .form-box input[type="password"],
+      .form-box select,
+      .form-box input[type="submit"] {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 3px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+
+      .form-box input[type="submit"] {
+        background-color: #4caf50;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .form-box input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-box">
+        <h2>Login</h2>
+        <form action="/login" method="POST">
+          <label for="loginType">Login As:</label><br />
+          <select id="loginType">
+            <option value="user">User</option>
+            <option value="admin">Admin</option></select
+          ><br /><br />
+          <label for="loginUsername">Username:</label><br />
+          <input
+            type="text"
+            id="loginUsername"
+            name="username"
+            required
+          /><br />
+          <label for="=email">Email:</label><br />
+          <input type="text" id="email" name="email" required /><br />
+          <label for="loginPassword">Password:</label><br />
+          <input
+            type="password"
+            id="loginPassword"
+            name="password"
+            required
+          /><br /><br />
+          <input type="submit" class="btn" value="Login" />
+        </form>
+        <p>Don't have an account? <a href="register.html">Sign Up</a></p>
+        <div
+          id="error-message"
+          class="alert alert-danger"
+          style="display: none"
+        ></div>
+
+        <script>
+          const urlParams = new URLSearchParams(window.location.search);
+          const errorMessage = urlParams.get("error");
+          if (errorMessage) {
+            document.getElementById("error-message").innerText = errorMessage;
+            document.getElementById("error-message").style.display = "block";
+          }
+        </script>
+      </div>
+    </div>
+  </body>
+</html>

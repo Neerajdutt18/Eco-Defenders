@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Products</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="icon" href="static/logo.png" />
+    <style>
+      html {
+        background-color: transparent;
+      }
+      #Home {
+        background-image: url("static/bg.webp");
+        background-size: cover;
+        background-position: center;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #09080800;
+
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+
+      header {
+        background-color: #01d8f400;
+        color: #000;
+        padding: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      header img {
+        width: 200px; /* Reduced the size of the logo */
+        height: auto;
+      }
+
+      nav {
+        display: flex;
+        justify-content: flex-end; /* Align to the right */
+        margin-top: 20px;
+      }
+
+      nav a {
+        color: #000;
+        text-decoration: none;
+        margin: 0 20px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .container {
+        background-color: #fdfdfd00;
+
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 0 auto;
+      }
+
+      h1 {
+        margin-top: 0;
+      }
+
+      p {
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      img.my-6 {
+        display: block;
+        margin: auto;
+      }
+
+      .text-container {
+        position: absolute;
+        left: 50px;
+        top: 50%;
+        transform: translateY(-70%);
+      }
+
+      footer {
+        background-color: #fff;
+        color: #000;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+
+      /* Keyframe animation for moving text */
+      @keyframes moveText {
+        0% {
+          opacity: 0;
+          transform: translateY(0);
+        }
+        30% {
+          opacity: 1;
+          transform: translateY(-5px);
+        }
+        70% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(0);
+        }
+      }
+
+      /* Apply animation to the moving-text class with increased duration and subtle color change */
+      .moving-text {
+        animation: moveText 10s ease-in-out infinite;
+        color: #32a03c;
+        font-weight: bold;
+        font-size: 24px;
+      }
+
+      .green-solution {
+        color: green;
+      }
+
+      .login-register-buttons {
+        display: flex;
+        align-items: center;
+      }
+
+      .login-register-buttons a {
+        color: #000;
+        text-decoration: none;
+        margin: 0 20px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      /* Social Media Icons */
+      .social-icons {
+        display: flex;
+        align-items: center;
+      }
+
+      .social-icons a {
+        margin-right: 10px;
+      }
+
+      .social-icons img {
+        width: 30px;
+        height: 30px;
+      }
+      .container-fluid {
+        background-color: #333333; /* Dark grey color */
+        padding-left: 30px;
+      }
+
+      .eco_footer_columns {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .col-md-3 {
+        flex: 0 0 30%;
+        max-width: 30%;
+      }
+
+      .widget {
+        color: #ffffff; /* White text color */
+      }
+
+      .widget-title {
+        color: #ffffff; /* White text color */
+      }
+
+      .textwidget p {
+        color: #ffffff; /* White text color */
+      }
+
+      .textwidget a {
+        color: #ffffff; /* White text color */
+      }
+
+      .widget-social ul li a {
+        color: #ffffff; /* White text color */
+      }
+
+      .widget-social ul li a:hover {
+        color: #cccccc; /* Light grey color on hover */
+      }
+
+      .footer_itm ul li {
+        color: #ffffff; /* White text color */
+      }
+
+      .footer_itm ul li a {
+        color: #ffffff; /* White text color */
+      }
+
+      .footer_itm ul li a:hover {
+        color: #cccccc; /* Light grey color on hover */
+      }
+      .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+      }
+
+      .mySlides {
+        display: none;
+      }
+
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+      }
+
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+
+      .prev:hover,
+      .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
+      #custom_html-8 {
+        width: 25%;
+      }
+      .saahas_footer .col-md-3 {
+        float: left;
+        width: 20%;
+      }
+      #custom_html-5 {
+        width: 15%;
+      }
+      #custom_html-6 li,
+      #custom_html-6 .right {
+        list-style: none;
+        color: #6f6f6f;
+        font-size: 13px;
+        line-height: 1.5;
+        position: relative;
+        font-size: 15px;
+        padding-left: 3%;
+        padding-left: 9%;
+        float: left;
+      }
+
+      #custom_html-6 .right li:before {
+        position: absolute;
+        content: "";
+        left: 4px;
+        top: 9px;
+        width: 4px;
+        height: 4px;
+        background-color: #8f918e;
+        border-radius: 100%;
+      }
+      #custom_html-6 .right li:after {
+        position: absolute;
+        content: "";
+        left: 0px;
+        top: 5px;
+        width: 12px;
+        height: 12px;
+        border: 1px solid #8f918e;
+        border-radius: 100%;
+      }
+      .product-card {
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      .product-photo {
+        max-width: 100%;
+        height: auto;
+      }
+      .product-link {
+        text-decoration: none;
+        color: inherit; /* inherit color from parent */
+      }
+      .product-link:hover {
+        color: inherit; /* maintain same hover color */
+        text-decoration: none; /* remove underline on hover */
+      }
+      .product-card {
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      .product-photo {
+        max-width: 100%;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="l1-auth-links">
+      <!-- Added -->
+      <nav aria-label="Contact/Login Navigation" role="navigation">
+        <!-- Added -->
+        <span id="l1-contact-separator">&nbsp;|&nbsp;</span>
+        <!-- Added -->
+        <span id="l1-contact-separator-br"><br /></span>
+        <!-- Added -->
+        <a href="login.html">Login</a>
+        &nbsp;|&nbsp;
+        <!-- Added -->
+        <a href="register.html">Register</a>
+        <!-- Added -->
+      </nav>
+      <!-- Added -->
+    </div>
+    <!-- Added -->
+
+    <header>
+      <nav>
+        <a href="http://localhost:5500/#Home">Home</a>
+        <a href="http://localhost:5500/service.html">Services</a>
+        <a href="http://localhost:5500/about.html">About</a>
+        <a href="http://localhost:5500/#contact">Contact</a>
+      </nav>
+      <!-- Added social media icons -->
+      <div class="social-icons">
+        <a
+          href="https://www.facebook.com/eco.defenders.2024?sfnsn=wiwspwa&mibextid=RUbZ1f"
+          ><img src="static/fb.png" alt="Facebook"
+        /></a>
+        <a href="https://www.instagram.com/eco_defenders11/"
+          ><img src="static/inst.png" alt="Instagram"
+        /></a>
+        <a href="mailto:ecodefenders11@gmail.com"
+          ><img src="static/email.png" alt="Email"
+        /></a>
+      </div>
+      <!-- End of social media icons -->
+    </header>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="http://127.0.0.1:5001/">Sell</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://127.0.0.1:5002">Buy</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <center><h1 class="mt-4">Your Products</h1></center>
+      <div class="row">
+        {% for product in products %}
+        <div class="col-md-4">
+          <div class="product-card">
+            <img
+              src="{{ product.image_url }}"
+              alt="{{ product.name }}"
+              class="product-photo"
+            />
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.description }}</p>
+            <p>Price: Rs{{ product.price }}</p>
+            <form
+              action="{{ url_for('delete_product', product_id=product.id) }}"
+              method="post"
+            >
+              <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <a
+        href="{{ url_for('add_product') }}"
+        class="btn btn-primary float-right mt-4"
+        >Add Product</a
+      >
+    </div>
+  </body>
+</html>

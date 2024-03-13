@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="static/logo.png" />
+    <title>Our Services</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2; /* Set background color */
+        color: #333;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .py-24 {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .mb-16 {
+        margin-bottom: 2rem;
+      }
+
+      .bg-white {
+        background-color: #ffffff;
+      }
+
+      .tm-text-brown {
+        color: #8b4513; /* Brown color */
+      }
+
+      .py-6 {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+      }
+
+      .px-12 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .text-4xl {
+        font-size: 2rem;
+      }
+
+      .font-medium {
+        font-weight: 500;
+      }
+
+      .inline-block {
+        display: inline-block;
+      }
+
+      .rounded-md {
+        border-radius: 0.375rem; /* 6px border-radius */
+      }
+
+      /* Three blocks in a row */
+      .services-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+
+      .service-block {
+        flex: 0 0 calc(33.3333% - 1rem); /* Adjust the percentage to control the size */
+        height: 400px; /* Set a fixed height for all service blocks */
+        margin-bottom: 2rem; /* Increase the distance between boxes */
+        text-align: center;
+        padding: 1.5rem; /* Increase padding for larger size */
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.9
+        ); /* Transparent white background */
+        border-radius: 15px; /* Adjust the value to control the roundness */
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out;
+      }
+
+      .service-block:hover {
+        transform: scale(1.05);
+      }
+
+      .service-block img {
+        max-width: 100%; /* Set the maximum width to 100% */
+        height: auto;
+        border-radius: 15px; /* Circular image */
+        margin-bottom: 1rem;
+      }
+
+      .service-title {
+        font-size: 1.25rem; /* Increased font size */
+        font-weight: bold;
+        margin-bottom: 0.75rem;
+      }
+
+      .service-desc {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+      }
+
+      .service-link {
+        text-decoration: none;
+        color: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="Services"
+      class="parallax-window"
+      data-parallax="scroll"
+      data-image-src="static/\green-waste-management.webp"
+    >
+      <div class="container py-24">
+        <div class="text-center mb-16">
+          <h2
+            class="bg-white tm-text-brown py-6 px-12 text-4xl font-medium inline-block rounded-md"
+          >
+            Our Services
+          </h2>
+        </div>
+
+        <!-- Three blocks in a row representing services -->
+        <div class="services-container">
+          <a href="D:\Blank\eco-defenders\m.html" class="service-link">
+            <div class="service-block">
+              <img
+                src="D:\Blank\eco-defenders\img\240_F_210885639_NEn2iHnq76ip3b6lzFxRFFfmYxCPfzCt.jpg"
+                alt="Waste Collection"
+              />
+              <h3 class="service-title">Waste Collection</h3>
+              <p class="service-desc">
+                Timely and efficient waste collection services.
+              </p>
+            </div>
+          </a>
+          <a href="D:\Blank\eco-defenders\educate.html" class="service-link">
+            <div class="service-block">
+              <img
+                src="D:\Blank\eco-defenders\img\240_F_692610125_kXouGZ9sUfGMwOH2x0GCox2T5YzeBt9c.jpg"
+                alt="Educate People"
+              />
+              <h3 class="service-title">Educate People</h3>
+              <p class="service-desc">
+                Educational programs to promote environmental awareness.
+              </p>
+            </div>
+          </a>
+          <a href="D:\Blank\eco-defenders\m.html" class="service-link">
+            <div class="service-block">
+              <img
+                src="D:\Blank\eco-defenders\img\240_F_547657329_DJd7SpYumRwHVA5VXp8OJm4i6XQTZ0Bb.jpg"
+                alt="Get Certified"
+              />
+              <h3 class="service-title">Get Certified</h3>
+              <p class="service-desc">
+                Obtain certification in eco-friendly practices.
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

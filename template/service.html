@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&family=Oswald:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="static/tailwind.css" />
+    <link rel="icon" href="static/logo.png" />
+    <title>Services-Eco Defenders</title>
+
+    <style>
+      html {
+        background-color: transparent;
+      }
+      #Home {
+        background-image: url("static/service.jpg");
+        background-size: cover;
+        background-position: center;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: rgba(9, 8, 8, 0);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+
+      header {
+        background-color: #01d8f400;
+        color: #000;
+        padding: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      header img {
+        width: 50px; /* Reduced the size of the logo */
+        height: auto;
+      }
+
+      nav {
+        display: flex;
+        justify-content: flex-end; /* Align to the right */
+        margin-top: 20px;
+      }
+
+      nav a {
+        color: #000;
+        text-decoration: none;
+        margin: 0 20px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .container {
+        padding: 70px;
+        background-color: #fdfdfd00;
+
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 0 auto;
+        max-width: 4000px;
+      }
+
+      h1 {
+        margin-top: 0;
+      }
+
+      p {
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      img.my-6 {
+        display: block;
+        margin: auto;
+      }
+
+      .mission-container {
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0
+        ); /* Adjust alpha value for transparency */
+        padding: 20px; /* Adjust padding as needed */
+        border-radius: 10px; /* Add border-radius for rounded corners */
+        /* Adjust maximum width as needed */
+        margin: 0 auto; /* Center align */
+        margin-top: 20px; /* Add margin-top for spacing */
+        text-align: center; /* Center align text */
+      }
+
+      /* Team Members Section Styles */
+      section {
+        padding: 50px 0;
+        background-color: #f7f7f7;
+        text-align: center;
+      }
+
+      h2 {
+        font-size: 32px;
+        color: #333;
+      }
+
+      .team-members {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+
+      .team-member {
+        max-width: 200px;
+        margin: 15px;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #fff;
+      }
+
+      .team-member img {
+        width: 100%;
+        border-radius: 50%;
+        margin-bottom: 10px;
+      }
+
+      h3 {
+        font-size: 18px;
+        margin-bottom: 5px;
+        color: #333;
+      }
+
+      p {
+        font-size: 14px;
+        color: #666;
+        margin: 5px 0;
+      }
+
+      footer {
+        background-color: #fff;
+        color: #000;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+
+      .login-register-buttons {
+        display: flex;
+        align-items: center;
+      }
+
+      .login-register-buttons a {
+        color: #000;
+        text-decoration: none;
+        margin: 0 20px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      /* Social Media Icons */
+      .social-icons {
+        display: flex;
+        align-items: center;
+      }
+
+      .social-icons a {
+        margin-right: 10px;
+      }
+
+      .social-icons img {
+        width: 30px;
+        height: 30px;
+      }
+      .container-fluid {
+        background-color: #333333; /* Dark grey color */
+        padding-left: 30px;
+      }
+
+      .eco_footer_columns {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .col-md-3 {
+        flex: 0 0 30%;
+        max-width: 30%;
+      }
+
+      .widget {
+        color: #ffffff; /* White text color */
+      }
+
+      .widget-title {
+        color: #ffffff; /* White text color */
+      }
+
+      .textwidget p {
+        color: #ffffff; /* White text color */
+      }
+
+      .textwidget a {
+        color: #ffffff; /* White text color */
+      }
+
+      .widget-social ul li a {
+        color: #ffffff; /* White text color */
+      }
+
+      .widget-social ul li a:hover {
+        color: #cccccc; /* Light grey color on hover */
+      }
+
+      .footer_itm ul li {
+        color: #ffffff; /* White text color */
+      }
+
+      .footer_itm ul li a {
+        color: #ffffff; /* White text color */
+      }
+
+      .footer_itm ul li a:hover {
+        color: #cccccc; /* Light grey color on hover */
+      }
+      .slideshow-container {
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+      }
+
+      .mySlides {
+        display: none;
+      }
+      .transparent-container {
+        background-color: rgba(
+          255,
+          255,
+          255,
+          0.882
+        ); /* Adjust the alpha value (0.5) to make it more or less transparent */
+        padding: 70px; /* Adjust the padding as needed */
+        width: 80%;
+      }
+      .orange-email {
+        color: orange;
+      }
+
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+      }
+
+      .service-container {
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        margin: 20px; /* Add margin for space between containers */
+        padding: 20px; /* Adjust padding as needed */
+        text-align: center;
+        /* Add border with desired color */
+      }
+
+      .service-container2 {
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        margin: 20px; /* Add margin for space between containers */
+        padding: 20px; /* Adjust padding as needed */
+        text-align: center;
+        border: 2px solid #32f401; /* Add border with desired color */
+      }
+
+      .service-container h2 {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .service-container p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .service-container ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .service-container ul li {
+        margin-bottom: 10px;
+        font-size: 16px;
+        color: #666;
+        text-align: left;
+      }
+
+      .owl-nav {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+      }
+
+      .owl-nav button {
+        padding: 10px 20px;
+        background-color: #bfc601;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .owl-nav button:hover {
+        background-color: #bfc601;
+      }
+
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+
+      .prev:hover,
+      .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="l1-auth-links">
+      <!-- Added -->
+      <nav aria-label="Contact/Login Navigation" role="navigation">
+        <!-- Added -->
+        <span id="l1-contact-separator">&nbsp;|&nbsp;</span>
+        <!-- Added -->
+        <span id="l1-contact-separator-br"><br /></span>
+        <!-- Added -->
+        <a href="login.html">Login</a>
+        &nbsp;|&nbsp;
+        <!-- Added -->
+        <a href="register.html">Register</a>
+        <!-- Added -->
+      </nav>
+      <!-- Added -->
+    </div>
+    <!-- Added -->
+
+    <header>
+      <nav>
+        <a href="http://localhost:5500/#Home">Home</a>
+        <a href="service.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="http://localhost:5500/#contact">Contact</a>
+      </nav>
+      <!-- Added social media icons -->
+      <div class="social-icons">
+        <a
+          href="https://www.facebook.com/eco.defenders.2024?sfnsn=wiwspwa&mibextid=RUbZ1f"
+          ><img src="static/fb.png" alt="Facebook"
+        /></a>
+        <a href="https://www.instagram.com/eco_defenders11/"
+          ><img src="static/inst.png" alt="Instagram"
+        /></a>
+        <a href="mailto:ecodefenders11@gmail.com"
+          ><img src="static/email.png" alt="Email"
+        /></a>
+      </div>
+      <!-- End of social media icons -->
+    </header>
+    <div id="Home" class="parallax-window container" data-parallax="scroll">
+      <div class="text-container">
+        <h1 class="text-4xl font-medium mb-6 tm-text-green">
+          <center>
+            <span style="font-weight: bold; color: rgb(18, 14, 14)"
+              >Services</span
+            >
+          </center>
+        </h1>
+      </div>
+    </div>
+    <br /><br />
+    <center>
+      <h2><strong>Our Services </strong></h2>
+    </center>
+    <div class="service-container">
+      <h3>
+        Eco Defenders encourages clean, green localities by providing a
+        comprehensive range of services. This includes offering pickup services
+        for efficient waste management, providing certification for adopting
+        eco-friendly practices, facilitating the uploading of blogs, images, and
+        videos, and enabling individuals to earn through the sale of solid
+        waste.
+      </h3>
+    </div>
+    <div class="owl-nav">
+      <div class="service-container2">
+        <img src="static\pickup.jpg" alt="Waste Pickup" />
+        <h3>Waste Pickup</h3>
+        <p>
+          Efficient waste management service aimed at keeping localities clean
+          and green. We offer hassle-free pickup solutions to responsibly
+          dispose of waste and contribute to environmental sustainability.
+        </p>
+        <br /><br /><br /><br /><br />
+        <button onclick="window.location.href = 'pickup.html'">
+          Learn More
+        </button>
+      </div>
+      <div class="service-container2">
+        <img src="static\educate.jpg" alt="Aware People" />
+        <h3>Aware People</h3>
+        <p>
+          Our awareness campaigns educate and empower communities to adopt
+          eco-friendly practices. Through informative sessions and workshops, we
+          inspire individuals to make conscious choices for a greener future.
+        </p>
+        <br /><br /><br />
+        <button onclick="window.location.href = 'educate.html'">
+          Learn More
+        </button>
+      </div>
+      <div class="service-container2">
+        <img src="static\certificate.png" alt="Get Certified" />
+        <h3>Get Certified</h3>
+        <p>
+          We provide certification for businesses and individuals committed to
+          eco-friendly practices. By obtaining our certification, you
+          demonstrate your dedication to environmental stewardship and
+          sustainability.
+        </p>
+
+        <button onclick="window.location.href = 'certified.html'">
+          Learn More
+        </button>
+      </div>
+      <div class="service-container2">
+        <img src="static\selll.jpg" alt="Sell Products" />
+        <h3>Sell Products</h3>
+        <p>
+          Our platform enables individuals to earn by selling recycled or
+          upcycled products. Join our community and turn waste into wealth while
+          contributing to a cleaner environment.
+        </p>
+        <br /><br /><br /><br /><br /><br />
+        <button onclick="window.location.href = 'http://127.0.0.1:5001/'">Learn More</button>
+      </div>
+    </div>
+  </head>
+  
+</html>

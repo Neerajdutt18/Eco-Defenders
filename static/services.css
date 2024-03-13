@@ -1,0 +1,108 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.py-24 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-16 {
+  margin-bottom: 2rem;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+.tm-text-brown {
+  color: #8b4513;
+}
+
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.px-12 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.text-4xl {
+  font-size: 2rem;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.rounded-md {
+  border-radius: 0.375rem; /* 6px border-radius */
+}
+
+/* Three blocks in a row */
+.services-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.service-block {
+  flex: 0 0 calc(33.3333% - 1rem); /* Adjust the percentage to control the size */
+  height: 400px; /* Set a fixed height for all service blocks */
+  margin-bottom: 2rem; /* Increase the distance between boxes */
+  text-align: center;
+  padding: 1.5rem; /* Increase padding for larger size */
+  background-color: rgba(255, 255, 255, 0.9); /* Transparent white background */
+  border-radius: 15px; /* Adjust the value to control the roundness */
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.service-block:hover {
+  transform: scale(1.05);
+}
+
+.service-block img {
+  max-width: 100%; /* Set the maximum width to 100% */
+  height: auto;
+  border-radius: 15px; /* Circular image */
+  margin-bottom: 1rem;
+}
+
+.service-title {
+  font-size: 1.25rem; /* Increased font size */
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+.service-desc {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.service-link {
+  text-decoration: none;
+  color: inherit;
+}

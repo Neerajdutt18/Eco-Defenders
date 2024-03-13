@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pickup Data</title>
+  </head>
+  <body>
+    <h1>Pickup Data</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Waste Type</th>
+          <th>Quantity</th>
+          <th>Date Pickup</th>
+          <th>Time Pickup</th>
+          <th>Address Pickup</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% pickupData.forEach(pickup => { %>
+        <tr>
+          <td><%= pickup.name %></td>
+          <td><%= pickup.email %></td>
+          <td><%= pickup.phone %></td>
+          <td><%= pickup.waste_type %></td>
+          <td><%= pickup.quantity %></td>
+          <td><%= pickup.date_pickup %></td>
+          <td><%= pickup.time_pickup %></td>
+          <td><%= pickup.address_pickup %></td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </body>
+</html>

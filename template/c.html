@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="static/logo.png" />
+    <title>Login Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindstatic/2.2.19/tailwind.min.css"
+    />
+  </head>
+  <body class="bg-gray-100 min-h-screen flex justify-center items-center">
+    <div class="max-w-md w-full p-8 bg-white rounded-md shadow-md">
+      <h2 class="text-2xl font-semibold text-center mb-4">Login</h2>
+      <form id="loginForm">
+        <div class="mb-4">
+          <label for="username" class="block text-gray-700">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="password" class="block text-gray-700">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+            required
+          />
+        </div>
+        <div class="flex items-center justify-between">
+          <button
+            type="submit"
+            class="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600"
+          >
+            Login
+          </button>
+        </div>
+      </form>
+      <div class="text-center mt-4">
+        <span class="text-gray-600">Don't have an account?</span>
+        <button
+          id="showRegisterFormBtn"
+          class="text-indigo-500 hover:text-indigo-600 focus:outline-none"
+        >
+          Register
+        </button>
+      </div>
+    </div>
+
+    <!-- Register Form -->
+    <div
+      id="registerForm"
+      class="hidden max-w-md w-full p-8 bg-white rounded-md shadow-md"
+    >
+      <h2 class="text-2xl font-semibold text-center mb-4">Register</h2>
+      <form id="registerUserForm">
+        <div class="mb-4">
+          <label for="newUsername" class="block text-gray-700">Username</label>
+          <input
+            type="text"
+            id="newUsername"
+            name="newUsername"
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+            required
+          />
+        </div>
+        <div class="mb-4">
+          <label for="newPassword" class="block text-gray-700">Password</label>
+          <input
+            type="password"
+            id="newPassword"
+            name="newPassword"
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+            required
+          />
+        </div>
+        <div class="flex items-center justify-between">
+          <button
+            type="submit"
+            class="bg-indigo-500 text-white px-4 py-2 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600"
+          >
+            Register
+          </button>
+        </div>
+      </form>
+      <div class="text-center mt-4">
+        <span class="text-gray-600">Already have an account?</span>
+        <button
+          id="showLoginFormBtn"
+          class="text-indigo-500 hover:text-indigo-600 focus:outline-none"
+        >
+          Login
+        </button>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const loginForm = document.getElementById("loginForm");
+        const registerForm = document.getElementById("registerForm");
+        const showRegisterFormBtn = document.getElementById(
+          "showRegisterFormBtn"
+        );
+        const showLoginFormBtn = document.getElementById("showLoginFormBtn");
+
+        showRegisterFormBtn.addEventListener("click", function () {
+          loginForm.classList.add("hidden");
+          registerForm.classList.remove("hidden");
+        });
+
+        showLoginFormBtn.addEventListener("click", function () {
+          registerForm.classList.add("hidden");
+          loginForm.classList.remove("hidden");
+        });
+
+        loginForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+          // Login logic
+        });
+
+        const registerUserForm = document.getElementById("registerUserForm");
+        registerUserForm.addEventListener("submit", function (event) {
+          event.preventDefault();
+          // Registration logic
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,137 @@
+<html lang="en">
+  <head>
+ <meta charset="UTF-8" />
+    <meta name="port" content="widthdevice-width,-scale=10" />
+    <link rel="stylesheet" href="static/modal.css" />
+    <link rel="stylesheet" href="static/pickup.css" />
+    <link rel="icon" href="static/logo.png" />
+    <link rel="stylesheet" href="static/main.css">
+
+    <title>Pickup service</title>
+    
+</head>
+<body><style>
+  body {
+    background-image: url('static/logo.png');
+    background-size: cover;
+    background-position: center;
+  }
+  .notification-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .notification-icon {
+    width: 32px;
+    height: 32px;
+  }
+</style>
+<div class="notification-container">
+  <img class="notification-icon" src="static/\bell.png" alt="Notification">
+</div>
+  <div class="container">
+    <h1>Take Pickup</h1>
+    <p class="para"></p>
+      <br>
+      <h2>
+        <form class="schedule-pickup-form" action="/takepickup" method="POST">
+            <h2>User Details</h2>
+            <label for="name"> Name</label><br>
+            <input class="name" type="text" name="name" placeholder=" Name" required="required"><br>
+          
+            <label for="email"> Email</label><br>
+            <input class="email" type="email" name="email" placeholder=" Email" required="required"><br>
+          
+            <label for="phone"> Phone number</label><br>
+            <input class="phone" type="text" name="phone" placeholder=" Phone number" required="required"><br>
+          
+            <h2>Pickup Details</h2>
+            <label for="waste-type">Waste Type</label><br>
+            <input class="waste-type" type="text" name="waste-type" placeholder="Waste Type" required="required"><br>
+          
+            <label for="quantity">Quantity</label><br>
+            <input class="quantity" type="number" name="quantity" placeholder="Quantity" required="required"><br>
+          
+            <label for="pickup-date">Pickup Date</label><br>
+            <input class="pickup-date" type="date" name="pickup-date" required="required"><br>
+          
+            <label for="pickup-time">Pickup Time</label><br>
+            <input class="pickup-time" type="time" name="pickup-time" required="required"><br>
+          
+            <label for="address">Address</label><br>
+            <textarea class="address" name="address" id="address" cols="30" rows="3" placeholder="Address" required="required"></textarea><br>
+          
+            
+      </form>
+      <div class="container-grey">
+        <div class="eco_footer_columns">
+          <div id="text-3" class="col-md-3 col-sm-6 responsive-devider-50 widget_text"style="padding-left: 20px">
+            <div class="widget kode-widget list-style-1">
+              <br>
+              <h5 class="widget-title eco_sm_titles">Eco-Defenders Waste Management </h5>
+              <br>
+              <div class="clear"></div>
+              <div class="textwidget">
+                <p>Eco-Defenders Waste Management is committed to cleaning India by tackling domestic waste. We are dedicated to clearing the clutter and raising awareness about the importance of proper waste disposal. Our mission is to create a cleaner, greener India, one household at a time.</p>
+               
+              </div>
+            </div>
+          </div>
+      
+          <div id="custom_html-5" class="col-md-3 col-sm-6 responsive-devider-50 widget_custom_html" style="padding-left: 200px">
+            <div class="widget_text widget kode-widget list-style-1">
+              <div class="textwidget custom-html-widget">
+                <div class="footer_itm widget_nav_menu">
+                  <br>
+                  <h5 class="widget-title eco_sm_titles">Our Company</h5>
+                  <div class="clear"></div>
+                  <div class="menu-footer-menu-container">
+                    <br>
+                    <ul class="menu">
+                      <li><a href="http://localhost:5500/" aria-current="page">Home</a></li>
+                      <li><a href="http://localhost:5500/about.html#about">About Us</a></li>
+                      
+                      <li><a href="http://localhost:5500/#contact">Contact Us</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <div id="custom_html-7" class="col-md-3 col-sm-6 responsive-devider-50 widget_custom_html"style="padding-left: 200px">
+            <div class="widget_text widget kode-widget list-style-1">
+              <div class="textwidget custom-html-widget">
+                <div class="footer_itm">
+                  <div class="widget-social">
+                    <br>
+                    <h5 class="widget-title eco_sm_titles">Follow us on</h5>
+                    <div class="clear"></div>
+                    <br>
+                    <div class="social-icons">
+                      <a href="https://www.facebook.com/eco.defenders.2024?sfnsn=wiwspwa&mibextid=RUbZ1f"
+                        ><img src="static/fbwhite.png" alt="Facebook"
+                      /></a>
+                      <a href="https://www.instagram.com/eco_defenders11/"
+                        ><img src="static/whiteinsta.png" alt="Instagram"
+                      /></a>
+                      <a href="https://www.youtube.com/@ECODefenders"
+                        ><img src="static/yt.png" alt="youtube"
+                      /></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+       
+      </div>
+      
+      <footer>
+        <p>&copy; 2024 Eco-Defenders. All rights reserved.</p>
+      </footer>
+      
+    </h2>
+  </body>
+</html>

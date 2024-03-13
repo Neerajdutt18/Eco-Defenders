@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          
+          <link
+            href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&family=Oswald:wght@600&display=swap"
+            rel="stylesheet"
+          />
+          <link rel="stylesheet" href="static/tailwind.css" />
+          <link rel="icon" href="static/logo.png" />
+          <title>About Us-Eco Defenders</title>
+
+          <style>
+            html{
+              background-color: transparent;
+            }
+            #Home {
+              background-image: url('static/team.webp');
+              background-size: cover;
+              background-position: center;
+            }
+            body {
+              font-family: Arial, sans-serif;
+              margin: 0;
+              padding: 0;
+              background-color: rgba(9, 8, 8, 0);
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-position: center;
+            }
+
+            header {
+              background-color: #01d8f400;
+              color: #000;
+              padding: 2px;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+            }
+
+            header img {
+              width: 50px; /* Reduced the size of the logo */
+              height: auto;
+            }
+
+            nav {
+              display: flex;
+              justify-content: flex-end; /* Align to the right */
+              margin-top: 20px;
+            }
+
+            nav a {
+              color: #000;
+              text-decoration: none;
+              margin: 0 20px;
+              font-size: 18px;
+              font-weight: bold;
+            }
+
+            .container {
+              padding: 70px;
+              background-color: #fdfdfd00;
+              
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+              margin: 0 auto;
+              max-width: 4000px;
+            }
+            
+
+            h1 {
+              margin-top: 0;
+            }
+
+            p {
+              line-height: 1.6;
+              margin-bottom: 20px;
+            }
+
+            img {
+              max-width: 100%;
+              height: auto;
+              display: block;
+
+              border-radius: 5px;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            img.my-6 {
+              display: block;
+              margin: auto;
+            }
+            
+            
+            .mission-container {
+              background-color: rgba(255, 255, 255, 0); /* Adjust alpha value for transparency */
+              padding: 20px; /* Adjust padding as needed */
+              border-radius: 10px; /* Add border-radius for rounded corners */
+               /* Adjust maximum width as needed */
+              margin: 0 auto; /* Center align */
+              margin-top: 20px; /* Add margin-top for spacing */
+              text-align: center; /* Center align text */
+            }
+
+            /* Team Members Section Styles */
+            section {
+             padding: 50px 0;
+             background-color: #f7f7f7;
+             text-align: center;
+              }
+
+            h2 {
+              font-size: 32px;
+              color: #333;
+              }
+
+           .team-members {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+              }
+
+          .team-member {
+            max-width: 200px;
+            margin: 15px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+            }
+
+          .team-member img {
+           width: 100%;
+           border-radius: 50%;
+           margin-bottom: 10px;
+            }
+
+          h3 {
+           font-size: 18px;
+           margin-bottom: 5px;
+           color: #333;
+           }
+
+         p {
+           font-size: 14px;
+           color: #666;
+           margin: 5px 0;
+            }
+            
+            footer {
+              background-color: #fff;
+              color: #000;
+              text-align: center;
+              padding: 10px 0;
+              position: fixed;
+              bottom: 0;
+              width: 100%;
+            }
+
+            
+            .login-register-buttons {
+              display: flex;
+              align-items: center;
+            }
+
+            .login-register-buttons a {
+              color: #000;
+              text-decoration: none;
+              margin: 0 20px;
+              font-size: 18px;
+              font-weight: bold;
+            }
+
+            /* Social Media Icons */
+            .social-icons {
+              display: flex;
+              align-items: center;
+            }
+
+            .social-icons a {
+              margin-right: 10px;
+            }
+
+            .social-icons img {
+              width: 30px;
+              height: 30px;
+            }
+            .container-fluid {
+              background-color: #333333; /* Dark grey color */
+              padding-left: 30px;
+            }
+            
+            .eco_footer_columns {
+              display: flex;
+              justify-content: space-between;
+            }
+        
+            .col-md-3 {
+              flex: 0 0 30%;
+              max-width: 30%;
+            }
+            
+            .widget {
+              color: #ffffff; /* White text color */
+            }
+            
+            .widget-title {
+              color: #ffffff; /* White text color */
+            }
+            
+            .textwidget p {
+              color: #ffffff; /* White text color */
+            }
+            
+            .textwidget a {
+              color: #ffffff; /* White text color */
+            }
+            
+            .widget-social ul li a {
+              color: #ffffff; /* White text color */
+            }
+            
+            .widget-social ul li a:hover {
+              color: #cccccc; /* Light grey color on hover */
+            }
+            
+            .footer_itm ul li {
+              color: #ffffff; /* White text color */
+            }
+            
+            .footer_itm ul li a {
+              color: #ffffff; /* White text color */
+            }
+            
+            .footer_itm ul li a:hover {
+              color: #cccccc; /* Light grey color on hover */
+            }
+            .slideshow-container {
+              max-width: 1000px;
+              position: relative;
+              margin: auto;
+            }
+        
+            .mySlides {
+              display: none;
+            }
+            .transparent-container {
+              background-color: rgba(255, 255, 255, 0.882); /* Adjust the alpha value (0.5) to make it more or less transparent */
+              padding: 70px; /* Adjust the padding as needed */
+              width: 80%;
+            }
+            .orange-email {
+              color: orange;
+            }
+            
+        
+            .prev,
+            .next {
+              cursor: pointer;
+              position: absolute;
+              top: 50%;
+              width: auto;
+              padding: 16px;
+              margin-top: -22px;
+              color: white;
+              font-weight: bold;
+              font-size: 18px;
+              transition: 0.6s ease;
+              border-radius: 0 3px 3px 0;
+              user-select: none;
+            }
+        
+            .next {
+              right: 0;
+              border-radius: 3px 0 0 3px;
+            }
+        
+            .prev:hover,
+            .next:hover {
+              background-color: rgba(0, 0, 0, 0.8);
+            }
+        
+            .fade {
+              animation-name: fade;
+              animation-duration: 1.5s;
+            }
+        
+            @keyframes fade {
+              from {
+                opacity: 0.4;
+              }
+        
+              to {
+                opacity: 1;
+              }
+            }
+            
+            
+          </style>
+        </head>
+        <body>
+          <div id="l1-auth-links">
+            <!-- Added -->
+            <nav aria-label="Contact/Login Navigation" role="navigation">
+              <!-- Added -->
+              <span id="l1-contact-separator">&nbsp;|&nbsp;</span>
+              <!-- Added -->
+              <span id="l1-contact-separator-br"><br /></span>
+              <!-- Added -->
+              <a href="login.html">Login</a>
+              &nbsp;|&nbsp;
+              <!-- Added -->
+              <a href="register.html">Register</a>
+              <!-- Added -->
+            </nav>
+            <!-- Added -->
+          </div>
+          <!-- Added -->
+
+          <header>
+            
+            <nav>
+              <a href="http://localhost:5500/#Home">Home</a>
+              <a href="service.html">Services</a>
+              <a href="about.html">About</a>
+              <a href="http://localhost:5500/#contact">Contact</a>
+            </nav>
+            <!-- Added social media icons -->
+            <div class="social-icons">
+              <a href="https://www.facebook.com/eco.defenders.2024?sfnsn=wiwspwa&mibextid=RUbZ1f"
+                ><img src="static/fb.png" alt="Facebook"
+              /></a>
+              <a href="https://www.instagram.com/eco_defenders11/"
+                ><img src="static/inst.png" alt="Instagram"
+              /></a>
+              <a href="mailto:ecodefenders11@gmail.com"
+                ><img src="static/email.png" alt="Email"
+              /></a>
+            </div>
+            <!-- End of social media icons -->
+          </header>
+          <div
+            id="Home"
+            class="parallax-window container"
+            data-parallax="scroll"
+          >
+            
+          <div class="text-container">
+            <h1 class="text-4xl font-medium mb-6 tm-text-green">
+              <center>
+            <span style="font-weight: bold;color: rgb(18, 14, 14);">About Us</span></center>
+            </h1>
+            <p>
+              
+              
+            </p>
+          </div>
+          
+             
+            </div>
+          </div><br><br><br>
+        </section><center>
+        <h2><strong>Our Mission </strong></h2></center>
+        <div class="mission-container">
+          
+          <h3>Eco Defenders is a community-driven environmental initiative that aims to tackle the growing issue of waste management in India. Our mission is to create a cleaner, greener India by empowering individuals and communities to take action against waste pollution. We believe that everyone has a role to play in protecting our planet, and by working together, we can make a significant impact.</h3>
+        </div>
+          <br>
+          
+
+<br>
+</section><center>
+<h2><strong>Our Team </strong></h2></center>
+<div class="text-container">
+  <div class="team-members">
+    <!-- Team Member 1 -->
+    <div class="team-member">
+      <img src="static/neeraj.jpeg" alt="Team Member 1">
+      <h3>Neeraj Dutt</h3>
+      <p>Position:Back end Developer</p>
+      <center><p><a href="https://github.com/Neerajdutt18"><img src="static/github-icon.png" alt="GitHub Profile" style="width: 20px; height: 20px;"></a></p>
+      </center>
+      <p><a href="mailto:neerajdutt156@gmail.com" class="orange-email">neerajdutt156@gmail.com</a></p>
+      
+    </div>
+    
+    <div class="team-member">
+      <br>
+      <img src="static/raghav.jpeg" alt="Team Member 3"><br>
+      <h3>Raghav Atal</h3>
+      
+      <p>Position: Front end Developer</p>
+      <center><p><a href="https://github.com/raghavatal725"><img src="static/github-icon.png" alt="GitHub Profile" style="width: 20px; height: 20px;"></a></p>
+      </center>
+      <p><a href="mailto:raghavatal0725@gmail.com" class="orange-email">raghavatal0725@gmail.com</a></p>
+    </div>
+    <div class="team-member">
+      <br>
+      <img src="static/abhi.jpeg" alt="Team Member 4">
+      <h3>Abhishek Chnadrawanshi</h3>
+      <p>Position: Research</p>
+      <center><p><a href="https://github.com/Abhisingh2529"><img src="static/github-icon.png" alt="GitHub Profile" style="width: 20px; height: 20px;"></a></p>
+      </center>
+      <p><a href="mailto:abhisingh54678@gmail.com" class="orange-email">abhisingh54678@gmail.com</a></p>
+    </div>
+    
+    <!-- Team Member 2 -->
+    <div class="team-member">
+      <img src="static/harsh.jpeg" alt="Team Member 2"><br>
+      <h3>Harshdeep singh</h3>
+      <p>Position: Designing </p>
+      <center><p><a href="https://github.com/HarshdeepSinghKhalsa"><img src="static/github-icon.png" alt="GitHub Profile" style="width: 20px; height: 20px;"></a></p>
+      </center>
+      <p><a href="mailto:harshkhalsa778@gmail.com" class="orange-email">harshkhalsa778@gmail.com</a></p>
+       </div>
+    
+
+    <!-- Team Member 3 -->
+    
+    
+
+    <!-- Parallelly adding more team members -->
+    <!-- Team Member 4 -->
+   
+
+    <!-- Team Member 5 -->
+    
+</div>
+
+ 
+        </section>
+        <br>
+           <br><br><br><br> 
+          <div class="container-fluid" style="padding-left: 0px">
+            <!-- Eco footer content -->
+            <div class="eco_footer_columns">
+              <div id="text-3" class="col-md-3 col-sm-6 responsive-devider-50 widget_text"style="padding-left: 20px">
+                <div class="widget kode-widget list-style-1">
+                  <br>
+                  <h5 class="widget-title eco_sm_titles">Eco-Defenders Waste Management </h5>
+                  <br>
+                  <div class="clear"></div>
+                  <div class="textwidget">
+                    <p>Eco-Defenders Waste Management is committed to cleaning India by tackling domestic waste. We are dedicated to clearing the clutter and raising awareness about the importance of proper waste disposal. Our mission is to create a cleaner, greener India, one household at a time.</p>
+                   
+                  </div>
+                </div>
+              </div>
+          
+              <div id="custom_html-5" class="col-md-3 col-sm-6 responsive-devider-50 widget_custom_html" style="padding-left: 200px">
+                <div class="widget_text widget kode-widget list-style-1">
+                  <div class="textwidget custom-html-widget">
+                    <div class="footer_itm widget_nav_menu">
+                      <br>
+                      <h5 class="widget-title eco_sm_titles">Our Company</h5>
+                      <div class="clear"></div>
+                      <div class="menu-footer-menu-container">
+                        <br>
+                        <ul class="menu">
+                          <li><a href="http://localhost:5500/" aria-current="page">Home</a></li>
+                          <li><a href="http://localhost:5500/about.html">About Us</a></li>
+                          
+                          <li><a href="http://localhost:5500/#contact">Contact Us</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          
+              <div id="custom_html-7" class="col-md-3 col-sm-6 responsive-devider-50 widget_custom_html"style="padding-left: 200px">
+                <div class="widget_text widget kode-widget list-style-1">
+                  <div class="textwidget custom-html-widget">
+                    <div class="footer_itm">
+                      <div class="widget-social">
+                        <br>
+                        <h5 class="widget-title eco_sm_titles">Follow us on</h5>
+                        <div class="clear"></div>
+                        <br>
+                        <div class="social-icons">
+                          <a href="https://www.facebook.com/eco.defenders.2024?sfnsn=wiwspwa&mibextid=RUbZ1f"
+                            ><img src="static/fbwhite.png" alt="Facebook"
+                          /></a>
+                          <a href="https://www.instagram.com/eco_defenders11/"
+                            ><img src="static/whiteinsta.png" alt="Instagram"
+                          /></a>
+                          <a href="https://www.youtube.com/@ECODefenders"
+                            ><img src="static/yt.png" alt="youtube"
+                          /></a>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <footer>&copy; 2024 Eco Defenders - All rights reserved</footer>
+            </div><br><br>
+          <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+        
+            function plusSlides(n) {
+              showSlides((slideIndex += n));
+            }
+        
+            function currentSlide(n) {
+              showSlides((slideIndex = n));
+            }
+        
+            function showSlides(n) {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+              if (n > slides.length) {
+                slideIndex = 1;
+              }
+              if (n < 1) {
+                slideIndex = slides.length;
+              }
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+              }
+              slides[slideIndex - 1].style.display = "block";
+            }
+          </script>
+          
+          
+        </body>
+      </html>
+  </head>
+</html>                               

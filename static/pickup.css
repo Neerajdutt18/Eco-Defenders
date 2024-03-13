@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  color: #013f59;
+  background-image: url("static/logo.png"); /* Replace 'static/logo.png' with the actual path to your image */
+  background-size: cover; /* This ensures that the background image covers the entire body */
+  background-position: center; /* This centers the background image */
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.lobox {
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  top: 2%;
+  left: 5%;
+  z-index: 10;
+}
+
+@media screen and (max-width: 768px) {
+  .lobox {
+    display: none;
+  }
+}
+
+h1 {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 35px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 25px;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+h3 {
+  text-align: center;
+  font-size: 25px;
+  font-style: italic;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Social Media Icons */
+.social-icons {
+  display: flex;
+  align-items: center;
+}
+
+.social-icons a {
+  margin-right: 10px;
+}
+
+.social-icons img {
+  width: 30px;
+  height: 30px;
+}
+.container-fluid {
+  background-color: #333333; /* Dark grey color */
+  padding-left: 30px;
+}
+
+.eco_footer_columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col-md-3 {
+  flex: 0 0 30%;
+  max-width: 30%;
+}
+
+.widget {
+  color: #ffffff; /* White text color */
+}
+
+.widget-title {
+  color: #ffffff; /* White text color */
+}
+
+.textwidget p {
+  color: #ffffff; /* White text color */
+}
+
+.textwidget a {
+  color: #ffffff; /* White text color */
+}
+
+.widget-social ul li a {
+  color: #ffffff; /* White text color */
+}
+
+.widget-social ul li a:hover {
+  color: #cccccc; /* Light grey color on hover */
+}
+
+.footer_itm ul li {
+  color: #ffffff; /* White text color */
+}
+
+.footer_itm ul li a {
+  color: #ffffff; /* White text color */
+}
+
+.footer_itm ul li a:hover {
+  color: #cccccc; /* Light grey color on hover */
+}
+#custom_html-8 {
+  width: 25%;
+}
+.saahas_footer .col-md-3 {
+  float: left;
+  width: 20%;
+}
+#custom_html-5 {
+  width: 15%;
+}
+#custom_html-6 li,
+#custom_html-6 .right {
+  list-style: none;
+  color: #6f6f6f;
+  font-size: 13px;
+  line-height: 1.5;
+  position: relative;
+  font-size: 15px;
+  padding-left: 3%;
+  padding-left: 9%;
+  float: left;
+}
+
+#custom_html-6 .right li:before {
+  position: absolute;
+  content: "";
+  left: 4px;
+  top: 9px;
+  width: 4px;
+  height: 4px;
+  background-color: #8f918e;
+  border-radius: 100%;
+}
+#custom_html-6 .right li:after {
+  position: absolute;
+  content: "";
+  left: 0px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #8f918e;
+  border-radius: 100%;
+}
+
+h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+h5 {
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+h6 {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+select {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+}
+
+.schedule-pickup-form {
+  margin: 35px auto 0px auto;
+  width: 80%;
+}
+
+.schedule-pickup-form label {
+  font-size: 20px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.schedule-pickup-form input {
+  padding: 12px 20px;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background: rgb(255, 255, 255);
+  font-size: 18px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.schedule-pickup-form input:focus {
+  border-bottom: 2px solid #013f59;
+}
+
+.schedule-pickup-form textarea {
+  padding: 12px 20px;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background: rgb(255, 255, 255);
+  font-size: 18px;
+  border-radius: 3px;
+  width: 100%;
+  font-family: inter;
+  font-weight: normal;
+}
+
+.schedule-pickup-form textarea:focus {
+  border-bottom: 2px solid #013f59;
+}
+
+.schedule-pickup-form button {
+  font-size: 19px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  border: none;
+  padding: 12px 20px;
+  background-color: #013f59;
+  color: #e7eaee;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  border-bottom: 3px solid #013f59;
+}
+
+.schedule-pickup-form button:hover {
+  background-color: #e7eaee;
+  border-bottom: 3px solid #013f59;
+  border-top: 3px solid #013f59;
+  border-left: 3px solid #013f59;
+  border-right: 3px solid #013f59;
+  color: #013f59;
+}
+
+@media all and (min-width: 1000px) {
+  .schedule-pickup-form {
+    width: 40%;
+  }
+}
+
+@media all and (min-width: 1080px) {
+  .schedule-pickup-form {
+    width: 30%;
+  }
+}
+footer {
+  background-color: #fff;
+  color: #000;
+  text-align: center;
+  padding: 10px 0;
+
+  bottom: 0;
+  width: 100%;
+}

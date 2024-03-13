@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Address and Payment</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <!-- Include Razorpay Checkout.js -->
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      .container {
+        margin-top: 50px;
+      }
+      .checkout-section {
+        background-color: #fff;
+        border: 1px solid #eaeaea;
+        border-radius: 5px;
+        padding: 20px;
+        margin-bottom: 30px;
+      }
+      .checkout-section h2 {
+        font-size: 18px;
+        margin-bottom: 20px;
+        color: #007bff;
+      }
+      .form-group label {
+        font-weight: bold;
+      }
+      .form-control {
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+      }
+      .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="checkout-section">
+            <h2>Billing Details</h2>
+            <form id="billing-form">
+              <div class="form-group">
+                <label for="first_name">First Name *</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="first_name"
+                  name="first_name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="last_name">Last Name *</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="last_name"
+                  name="last_name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="street_address">Street Address *</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="street_address"
+                  name="street_address"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="city">Town / City *</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="city"
+                  name="city"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="state">State / County *</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="state"
+                  name="state"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="postcode">Postcode / ZIP *</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="postcode"
+                  name="postcode"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone *</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="phone"
+                  name="phone"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email address *</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  name="email"
+                  required
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <!-- Shipping Address and Order Notes sections -->
+          <!-- You can add those sections here if needed -->
+        </div>
+      </div>
+      <div class="checkout-section">
+        <h2>Payment Information</h2>
+        <button id="proceed-to-payment" class="btn btn-primary">
+          Proceed to Payment
+        </button>
+      </div>
+    </div>
+
+    <script>
+      // Set your Razorpay API key
+      var razorpayKey = "YOUR_RAZORPAY_PUBLIC_KEY"; // Replace with your actual Razorpay public key
+
+      // Handle payment button click
+      var proceedToPaymentButton =
+        document.getElementById("proceed-to-payment");
+      proceedToPaymentButton.addEventListener("click", function (event) {
+        // Get billing address details
+        var firstName = document.getElementById("first_name").value;
+        var lastName = document.getElementById("last_name").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+        var streetAddress = document.getElementById("street_address").value;
+        var city = document.getElementById("city").value;
+        var state = document.getElementById("state").value;
+        var postcode = document.getElementById("postcode").value;
+
+        // Calculate payment amount dynamically (for example, sum of first and last name lengths)
+        var amount = (firstName.length + lastName.length) * 100; // Amount in paise
+
+        // Create a Razorpay checkout instance
+        var options = {
+          key: razorpayKey,
+          amount: amount, // Amount dynamically calculated
+          currency: "INR", // Currency
+          name: "Your Company Name",
+          description: "Payment for your order",
+          image: "https://via.placeholder.com/150", // Logo or image URL
+          handler: function (response) {
+            // Handle success
+            alert("Payment successful!");
+            console.log(response);
+            // You can now submit the rest of the form to your server for processing
+          },
+          prefill: {
+            name: firstName + " " + lastName, // Customer's name
+            email: email, // Customer's email
+            contact: phone, // Customer's phone number
+          },
+          theme: {
+            color: "#007bff", // Theme color
+          },
+        };
+        var rzp = new Razorpay(options);
+        rzp.open();
+        event.preventDefault();
+      });
+    </script>
+  </body>
+</html>

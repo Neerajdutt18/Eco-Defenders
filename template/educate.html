@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="static/logo.png" />
+    <link rel="stylesheet" href="static/main.css">
+    <title>Educate People</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9ece3;
+        color: #333;
+        background-image: url('static/logo.png'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+        background-size: cover; /* This ensures that the background image covers the entire body */
+        background-position: center; /* This centers the background image */
+      }
+      
+      header {
+        background-color: #2c3e50;
+        padding: 20px;
+        text-align: center;
+        color: #ecf0f1;
+      }
+      main {
+        padding: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      section {
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      textarea,
+      input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+      }
+      .center {
+        text-align: center;
+      }
+      .center button {
+        margin: 10px auto;
+        display: block;
+      }
+      button {
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      button:hover {
+        background-color: #2980b9;
+      }
+      
+      .slideshow-container {
+        max-width: 100%;
+        position: relative;
+        margin: auto;
+      }
+      .slideshow-container img {
+        width: 100%;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1><strong>Educate People</strong></h1>
+    </header>
+
+    <main>
+      <section>
+        <h2>Share Your Knowledge</h2>
+        <p>
+          Help raise awareness about domestic waste management by sharing your
+          insights, images, and videos.
+        </p>
+        <form id="submissionForm" action="/submit" method="POST">
+          <label for="blog">Write a Blog:</label>
+          <textarea
+            id="blog"
+            name="blog"
+            rows="4"
+            placeholder="Share your thoughts..."
+          ></textarea>
+
+          <label for="image">Upload Image:</label>
+          <input type="file" id="image" name="image" accept="image/*" />
+
+          <label for="video">Embed Video (e.g., YouTube):</label>
+          <input
+            type="text"
+            id="video"
+            name="video"
+            placeholder="Paste video URL"
+          />
+
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+     
+    </main>
+    </main>
+    <div class="container-grey">
+      <div class="eco_footer_columns">
+        <div id="text-3" class="col-md-3 col-sm-6 responsive-devider-50 widget_text"style="padding-left: 20px">
+          <div class="widget kode-widget list-style-1">
+            <br>
+            <h5 class="widget-title eco_sm_titles">Eco-Defenders Waste Management </h5>
+            <br>
+            <div class="clear"></div>
+            <div class="textwidget">
+              <p>Eco-Defenders Waste Management is committed to cleaning India by tackling domestic waste. We are dedicated to clearing the clutter and raising awareness about the importance of proper waste disposal. Our mission is to create a cleaner, greener India, one household at a time.</p>
+             
+            </div>
+          </div>
+        </div>
+    
+        <div id="custom_html-5" class="col-md-3 col-sm-6 responsive-devider-50 widget_custom_html" style="padding-left: 200px">
+          <div class="widget_text widget kode-widget list-style-1">
+            <div class="textwidget custom-html-widget">
+              <div class="footer_itm widget_nav_menu">
+                <br>
+                <h5 class="widget-title eco_sm_titles">Our Company</h5>
+                <div class="clear"></div>
+                <div class="menu-footer-menu-container">
+                  <br>
+                  <ul class="menu">
+                    <li><a href="http://localhost:5500/" aria-current="page">Home</a></li>
+                    <li><a href="http://localhost:5500/about.html#about">About Us</a></li>
+                    
+                    <li><a href="http://localhost:5500/#contact">Contact Us</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <div id="custom_html-7" class="col-md-3 col-sm-6 responsive-devider-50 widget_custom_html"style="padding-left: 200px">
+          <div class="widget_text widget kode-widget list-style-1">
+            <div class="textwidget custom-html-widget">
+              <div class="footer_itm">
+                <div class="widget-social">
+                  <br>
+                  <h5 class="widget-title eco_sm_titles">Follow us on</h5>
+                  <div class="clear"></div>
+                  <br>
+                  <div class="social-icons">
+                    <a href="https://www.facebook.com/eco.defenders.2024?sfnsn=wiwspwa&mibextid=RUbZ1f"
+                      ><img src="static/fbwhite.png" alt="Facebook"
+                    /></a>
+                    <a href="https://www.instagram.com/eco_defenders11/"
+                      ><img src="static/whiteinsta.png" alt="Instagram"
+                    /></a>
+                    <a href="https://www.youtube.com/@ECODefenders"
+                      ><img src="static/yt.png" alt="youtube"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+     
+    </div>
+    <footer>
+      <p>&copy; 2024 Eco-Defenders. All rights reserved.</p>
+    </footer>
+
+    <script>
+      // JavaScript for the slideshow
+      let slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        let slides = document.querySelectorAll(".slideshow-container img");
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 4000); // Change image every 2 seconds (adjust as needed)
+      }
+    </script>
+  </body>
+</html>

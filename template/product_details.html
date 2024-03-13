@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ product.name }} Detail</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+
+      .container {
+        margin-top: 50px;
+      }
+
+      .product-image {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 10px;
+      }
+
+      .product-details {
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .product-price {
+        font-size: 1.2rem;
+        color: #007bff;
+      }
+
+      .contact-seller-btn {
+        background-color: #ffc107;
+        color: #000;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .contact-seller-btn:hover {
+        background-color: #ffd700;
+      }
+
+      .contact-details {
+        display: none;
+        margin-top: 10px;
+      }
+
+      .seller-name {
+        font-weight: bold;
+        color: #007bff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>{{ product.name }}</h1>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="product-image">
+            <img
+              src="{{ product.image_url }}"
+              alt="{{ product.name }}"
+              class="img-fluid"
+            />
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="product-details">
+            <p><strong>Description:</strong></p>
+            <p>{{ product.description }}</p>
+            <p class="product-price">₹ {{ product.price }}</p>
+            <!-- Display quantity in kgs in a new row -->
+            {% if product.quantity %}
+            <p><strong>Quantity:</strong> {{ product.quantity }} kgs</p>
+            {% endif %}
+            <!-- Add more product details here if needed -->
+            <button class="btn btn-primary contact-seller-btn">
+              Contact Seller
+            </button>
+            <div class="contact-details">
+              <p>
+                <strong>Seller Name:</strong>
+                <span class="seller-name">{{ product.seller_name }}</span>
+              </p>
+              <p>
+                <strong>Contact Number:</strong> {{ product.contact_number }}
+              </p>
+              <!-- You can include additional contact details here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Function to display contact details when "Contact Seller" button is clicked
+      var contactSellerButton = document.querySelector(".contact-seller-btn");
+      contactSellerButton.addEventListener("click", function () {
+        var contactDetails = document.querySelector(".contact-details");
+        contactDetails.style.display = "block";
+      });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
