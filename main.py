@@ -4,19 +4,10 @@ from flask_sqlalchemy import SQLAlchemy
 import pymysql
 from werkzeug.utils import secure_filename
 import os
-from flask_mail import Mail, Message
+
 
 app = Flask(__name__)
-mail = Mail(app)
 
-# Configure Flask-Mail
-app.config['MAIL_SERVER'] = 'smtp.example.com'
-app.config['MAIL_PORT'] = 465  # Use SSL
-app.config['MAIL_USE_SSL'] = True
-app.config['MAIL_USERNAME'] = 'root0958@gmail.com'
-app.config['MAIL_PASSWORD'] = 'Root@123'
-
-mail.init_app(app)
 
 app = Flask(__name__, template_folder='template')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:9596@localhost/mydatabase'
@@ -260,13 +251,9 @@ def register_user():
                 sql = "INSERT INTO Users (name, email, username, password, role, join_as) VALUES (%s, %s, %s, %s, %s, %s)"
                 cursor.execute(sql, (name, email, username, password, role, join_as))
                 connection.commit()
-                send_confirmation_email(name, email)  # Send confirmation email
                 return redirect("/login.html")
 
-def send_confirmation_email(name, email):
-    msg = Message('Welcome to Our Website', recipients=[email])
-    msg.body = f"Hello {name},\n\nThank you for registering as an admin on our website.\n\nRegards,\nThe Admin Team"
-    mail.send(msg)
+
 
 # Start the server
 if __name__ == "__main__":
