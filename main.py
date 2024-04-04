@@ -1,17 +1,30 @@
 # Import necessary modules
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory, session, flash
-import pymysql
 from flask_sqlalchemy import SQLAlchemy
+import pymysql
 from werkzeug.utils import secure_filename
 import os
+from flask_mail import Mail, Message
 
-sell = Flask(__name__, template_folder='template')
-sell.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:9596@localhost/mydatabase'
-sell.config['UPLOAD_FOLDER'] = 'UPLOAD_FOLDER2/'
-sell.config['STATIC_FOLDER'] = 'static/'
-sell.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg', 'gif'}
-sell.config['SECRET_KEY'] = 'your_secret_key'  # Required for session management
-db = SQLAlchemy(sell)
+app = Flask(__name__)
+mail = Mail(app)
+
+# Configure Flask-Mail
+app.config['MAIL_SERVER'] = 'smtp.example.com'
+app.config['MAIL_PORT'] = 465  # Use SSL
+app.config['MAIL_USE_SSL'] = True
+app.config['MAIL_USERNAME'] = 'root0958@gmail.com'
+app.config['MAIL_PASSWORD'] = 'Root@123'
+
+mail.init_app(app)
+
+app = Flask(__name__, template_folder='template')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqlconnector://root:9596@localhost/mydatabase'
+app.config['UPLOAD_FOLDER'] = 'UPLOAD_FOLDER2/'
+app.config['STATIC_FOLDER'] = 'static/'
+app.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg', 'gif'}
+app.config['SECRET_KEY'] = 'your_secret_key'  # Required for session management
+db = SQLAlchemy(app)
 
 class Submissions(db.Model):
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
@@ -20,7 +33,7 @@ class Submissions(db.Model):
     video = db.Column(db.String(255))
     
 def allowed_file(filename):
-    return '.' in filename and filename.rsplit('.', 1)[1].lower() in sell.config['ALLOWED_EXTENSIONS']
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in app.config['ALLOWED_EXTENSIONS']
 
 
 # Create connection to MySQL database
@@ -42,7 +55,7 @@ with connection.cursor() as cursor:
 
 # Serve HTML files
 # Serve HTML files
-@sell.route("/")
+@app.route("/")
 def home():
     # Fetch submissions from the database
     with connection.cursor() as cursor:
@@ -52,42 +65,42 @@ def home():
     return render_template("front.html", submissions=submissions)
 
 
-@sell.route("/login.html")
+@app.route("/login.html")
 def login():
     return render_template("login.html")
 
-@sell.route("/register.html")
+@app.route("/register.html")
 def register():
     return render_template("register.html")
 
-@sell.route("/certified.html")
+@app.route("/certified.html")
 def certified():
     return render_template("certified.html")
 
-@sell.route("/index")
+@app.route("/index")
 def index():
     return render_template("index.html")
 
-@sell.route("/about.html")
+@app.route("/about.html")
 def about():
     return render_template("about.html")
 
-@sell.route("/service.html")
+@app.route("/service.html")
 def service():
     return render_template("service.html")
 
-@sell.route("/pickup.html")
+@app.route("/pickup.html")
 def pickup():
     return render_template("pickup.html")
 
-@sell.route("/feedback.html")
+@app.route("/feedback.html")
 def feedback():
     return render_template("feedback.html")
 
-@sell.route("/front.html")
+@app.route("/front.html")
 def front():
     return render_template("front.html")
-@sell.route("/admin")
+@app.route("/admin")
 def admin():
     # Fetch data from the takepickup table
     with connection.cursor() as cursor:
@@ -102,16 +115,16 @@ def admin():
     # Render the admin.html template with the fetched data
     return render_template("admin.html", takepickups=takepickups, products=products)
 
-@sell.route("/educate.html")
+@app.route("/educate.html")
 def educate():
     return render_template("educate.html")
 
-@sell.route("/waste.html")
+@app.route("/waste.html")
 def waste():
     return render_template("waste.html")
 
 # Handle form submissions
-@sell.route("/submit", methods=["POST"])
+@app.route("/submit", methods=["POST"])
 def submit():
     if request.method == "POST":
         blog = request.form["blog"]
@@ -124,7 +137,7 @@ def submit():
             connection.commit()
 
         return "Thank you for your contribution!"
-@sell.route("/submit_feedback", methods=["POST"])
+@app.route("/submit_feedback", methods=["POST"])
 def submit_feedback():
     if request.method == "POST":
         feedback = request.form.get("feedback", "")
@@ -133,13 +146,13 @@ def submit_feedback():
         # For now, let's just print it
         print("Feedback received:", feedback)
 
-        # Redirect the user to a thank you page or any other sellropriate action
+        # Redirect the user to a thank you page or any other appropriate action
         return redirect(url_for("thank_you"))
-@sell.route("/thank_you")
+@app.route("/thank_you")
 def thank_you():
     return render_template("service.html")
 
-@sell.route("/submit-certificate", methods=["POST"])
+@app.route("/submit-certificate", methods=["POST"])
 def submit_certificate():
     if request.method == "POST":
         FullName = request.form["FullName"]
@@ -153,7 +166,7 @@ def submit_certificate():
 
         return "Thank you for submitting your certificate request!"
 
-@sell.route("/takepickup", methods=["POST"])
+@app.route("/takepickup", methods=["POST"])
 def takepickup():
     if request.method == "POST":
         name = request.form.get("name", "")
@@ -174,7 +187,7 @@ def takepickup():
 
 # Handle login form submission
 # Route to handle user login
-@sell.route("/login", methods=["POST"])
+@app.route("/login", methods=["POST"])
 def login_user():
     if request.method == "POST":
         username = request.form["username"]
@@ -195,7 +208,7 @@ def login_user():
 
 # Route to handle form submission from educate.html
 # Handle form submissions
-@sell.route("/submit", methods=["POST"])
+@app.route("/submit", methods=["POST"])
 def submit_form():
     if request.method == "POST":
         blog = request.form["blog"]
@@ -204,9 +217,9 @@ def submit_form():
 
         if image:
             filename = secure_filename(image.filename)
-            save_path = os.path.join(sell.config['UPLOAD_FOLDER'], filename)
+            save_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             image.save(save_path)
-            image_path = os.path.join(request.base_url, sell.config['UPLOAD_FOLDER'][1:], filename)
+            image_path = os.path.join(request.base_url, app.config['UPLOAD_FOLDER'][1:], filename)
         else:
             image_path = ""
 
@@ -215,21 +228,23 @@ def submit_form():
             cursor.execute(sql, (blog, image_path, video))
             connection.commit()
 
-        return "Thank you for your contribution!"@sell.route('/uploads/<filename>')
+        return "Thank you for your contribution!"@app.route('/uploads/<filename>')
 def uploaded_file(filename):
-    return send_from_directory(sell.config['UPLOAD_FOLDER2'], filename)
+    return send_from_directory(app.config['UPLOAD_FOLDER2'], filename)
 
 
 
 # Handle register form submission
-@sell.route("/register", methods=["POST"])
+@app.route("/register", methods=["POST"])
 def register_user():
     if request.method == "POST":
         name = request.form["name"]
         email = request.form["email"]
-        username = request.form["username"]
         password = request.form["password"]
         role = request.form["role"]
+        username = request.form.get("username")  # Use .get() to handle if username is not submitted
+        join_as = request.form.get("adminType")
+        
 
         with connection.cursor() as cursor:
             check_sql = "SELECT * FROM Users WHERE username = %s OR email = %s"
@@ -242,10 +257,17 @@ def register_user():
                 else:
                     return redirect("/register.html?error=Email+is+already+registered")
             else:
-                sql = "INSERT INTO Users (name, email, username, password, role) VALUES (%s, %s, %s, %s, %s)"
-                cursor.execute(sql, (name, email, username, password, role))
+                sql = "INSERT INTO Users (name, email, username, password, role, join_as) VALUES (%s, %s, %s, %s, %s, %s)"
+                cursor.execute(sql, (name, email, username, password, role, join_as))
                 connection.commit()
+                send_confirmation_email(name, email)  # Send confirmation email
                 return redirect("/login.html")
 
-# Start the server
+def send_confirmation_email(name, email):
+    msg = Message('Welcome to Our Website', recipients=[email])
+    msg.body = f"Hello {name},\n\nThank you for registering as an admin on our website.\n\nRegards,\nThe Admin Team"
+    mail.send(msg)
 
+# Start the server
+if __name__ == "__main__":
+    app.run(port=5500, debug=True)

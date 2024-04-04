@@ -66,17 +66,49 @@
         <h2>Sign Up</h2>
 
         <form id="signupForm" action="/register" method="POST">
+          <label for="signupRole">Role:</label><br />
+          <select id="signupRole" name="role" onchange="toggleRole()">
+            <option value="user">User</option>
+            <option value="admin">Admin</option></select
+          ><br /><br />
+
+          <!-- Admin-specific fields -->
+          <div id="adminFields" style="display: none">
+            <label for="adminType">Join as an:</label><br />
+            <input
+              type="radio"
+              id="individual"
+              name="adminType"
+              value="individual"
+              checked
+            />
+            <label for="individual">Individual</label><br />
+            <input
+              type="radio"
+              id="organization"
+              name="adminType"
+              value="organization"
+            />
+            <label for="organization">Organization</label><br /><br />
+          </div>
+
+          <!-- Common fields for both user and admin -->
           <label for="signupName">Name:</label><br />
           <input type="text" id="signupName" name="name" required /><br />
           <label for="signupEmail">Email:</label><br />
           <input type="email" id="signupEmail" name="email" required /><br />
-          <label for="signupUsername">Username:</label><br />
-          <input
-            type="text"
-            id="signupUsername"
-            name="username"
-            required
-          /><br />
+
+          <!-- Username field -->
+          <div id="usernameField">
+            <label for="signupUsername">Username:</label><br />
+            <input
+              type="text"
+              id="signupUsername"
+              name="username"
+              required
+            /><br />
+          </div>
+
           <label for="signupPassword">Password:</label><br />
           <input
             type="password"
@@ -84,24 +116,34 @@
             name="password"
             required
           /><br />
-          <label for="signupRole">Role:</label><br />
-          <select id="signupRole" name="role">
-            <option value="user">User</option>
-            <option value="admin">Admin</option></select
-          ><br /><br />
+
+          <!-- Submit button -->
           <input type="submit" class="btn" value="Sign Up" />
         </form>
         <p>Already have an account? <a href="login.html">Login</a></p>
         <div id="error-container"></div>
         <script>
-          const errorContainer = document.getElementById("error-container");
+          // JavaScript for showing/hiding admin fields based on role selection
+          function toggleRole() {
+            const role = document.getElementById("signupRole").value;
+            const adminFields = document.getElementById("adminFields");
+            const usernameField = document.getElementById("usernameField");
 
-          // Check if there is an error message in the URL
+            if (role === "admin") {
+              adminFields.style.display = "block";
+            } else {
+              adminFields.style.display = "none";
+            }
+
+            // Hide username field if role is organization
+          }
+
+          // JavaScript for displaying error messages
+          const errorContainer = document.getElementById("error-container");
           const urlParams = new URLSearchParams(window.location.search);
           const errorMessage = urlParams.get("error");
 
           if (errorMessage) {
-            // Display the error message in the error container
             errorContainer.innerText = errorMessage;
           }
         </script>
